@@ -3,10 +3,11 @@ package register;
 import com.github.javafaker.Faker;
 
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.After;
 import org.junit.Test;
-import pageObject.LoginPage;
-import pageObject.MainPage;
-import pageObject.RegisterPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RegisterPage;
 
 public class InvalidPasswordTest extends base.BaseTest {
     Faker faker = new Faker();
@@ -25,5 +26,9 @@ public class InvalidPasswordTest extends base.BaseTest {
         registerPage.inputPassword(faker.internet().password(3, 5));
         registerPage.clickFinallyRegisterButton();
         registerPage.checkShortPasswordError();
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
     }
 }

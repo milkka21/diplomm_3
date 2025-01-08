@@ -1,14 +1,15 @@
 package register;
 
-import Info.User;
-import Info.UserClient;
+import info.User;
+import info.UserClient;
 import com.github.javafaker.Faker;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
+import org.junit.After;
 import org.junit.Test;
-import pageObject.LoginPage;
-import pageObject.MainPage;
-import pageObject.RegisterPage;
+import pageobject.LoginPage;
+import pageobject.MainPage;
+import pageobject.RegisterPage;
 
 public class ValidRegTest extends base.BaseTest {
     protected UserClient client = new UserClient();
@@ -36,5 +37,9 @@ public class ValidRegTest extends base.BaseTest {
         String accessToken = client.getToken(response);
         ValidatableResponse deleteResponse = client.deleteUser(accessToken);
         client.userDeleted(deleteResponse);
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
     }
 }

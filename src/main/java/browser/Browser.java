@@ -22,11 +22,11 @@ public class Browser {
                 ChromeOptions optionsChrome = new ChromeOptions();
                 optionsChrome.addArguments("--start-maximized");
                 optionsChrome.addArguments("--remote-allow-origins=");
-                System.setProperty("webdriver.chrome.driver", "/Users/milkka/Downloads/chromedriver-mac-arm64-131.0.6778.204/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chrome/chromedriver");
                 driver = new ChromeDriver(optionsChrome);
                 break;
             case YANDEX:
-                System.setProperty("webdriver.chrome.driver", "/Users/milkka/Downloads/yandexdriver-24.12.0.1772-mac/yandexdriver");
+                System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/yandex/yandexdriver");
                 driver = new ChromeDriver();
                 break;
             default:
