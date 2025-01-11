@@ -33,13 +33,13 @@ public class ValidRegTest extends base.BaseTest {
         registerPage.clickFinallyRegisterButton();
         loginPage.checkRegistrationIsSuccessfully();
 
-        ValidatableResponse response = client.loginUser(new User(email, password));
-        String accessToken = client.getToken(response);
-        ValidatableResponse deleteResponse = client.deleteUser(accessToken);
-        client.userDeleted(deleteResponse);
     }
     @After
     public void tearDown() {
+        ValidatableResponse response = client.loginUser(new User(email, password));
+        String accessToken = client.getToken(response);
+        client.deleteUser(accessToken);
+
         driver.quit();
     }
 }

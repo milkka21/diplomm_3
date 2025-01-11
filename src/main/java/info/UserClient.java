@@ -68,7 +68,9 @@ public class UserClient {
                 .baseUri(Constants.BASE_URI)
                 .body(userCreate)
                 .when()
-                .post("/auth/register")
-                .then();
+                .post(Constants.ROOT + "register")
+                .then()
+                .log()
+                .all();
     }
 }

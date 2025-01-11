@@ -18,8 +18,6 @@ public class LoginPage  {
     //поле ввода пароля в окне входа
     private final By passwordField = By.xpath(".//*[text()='Пароль']/following-sibling::input");
 
-    public static final By constructorElement = By.xpath("//p[text()='Конструктор']");
-
     private final WebDriver driver;
 
     public LoginPage(WebDriver driver) {

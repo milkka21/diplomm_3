@@ -23,7 +23,7 @@ public class MainPage  {
     //кнопка Начинки
     private final By fillingsButton = By.xpath(".//*[text()='Начинки']");
 
-    public static final By constructorElement = By.xpath("//p[text()='Конструктор']");
+    public static final By CONSTRUCTOR_ELEMENT = By.xpath("//p[text()='Конструктор']");
 
     private final WebDriver driver;
 

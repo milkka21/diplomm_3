@@ -1,8 +1,10 @@
 package login;
 
+import info.User;
 import info.UserClient;
 import info.UserCreate;
 import io.qameta.allure.junit4.DisplayName;
+import io.restassured.response.ValidatableResponse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +20,7 @@ public class LoginTest extends base.BaseTest {
     @Before
     public void setUp() {
         userClient = new UserClient(); // Инициализация клиента для работы с API
-        testUser = new UserCreate("milkka2111", "qwertyi", "milkka2111@gmail.com"); // Создание нового пользователя
+        testUser = new UserCreate("milkka2111", "qwertyi", "milkka2112@gmail.com"); // Создание нового пользователя
         userClient.register(testUser); // Регистрация пользователя через API
     }
 
@@ -76,7 +78,10 @@ public class LoginTest extends base.BaseTest {
     }
     @After
     public void tearDown() {
-        userClient.deleteUser(testUser.getEmail());
+        ValidatableResponse response = userClient.loginUser(new User(testUser.getEmail(), testUser.getPassword()));
+        String accessToken = userClient.getToken(response);
+        userClient.deleteUser(accessToken);
+
         driver.quit();
     }
 }

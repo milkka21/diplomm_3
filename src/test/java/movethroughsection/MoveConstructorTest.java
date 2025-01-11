@@ -7,7 +7,6 @@ import org.junit.Test;
 import pageobject.MainPage;
 
 public class MoveConstructorTest extends base.BaseTest {
-
     private MainPage mainPage;
 
     @Before
