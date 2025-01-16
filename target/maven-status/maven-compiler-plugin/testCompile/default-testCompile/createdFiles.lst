@@ -1,0 +1,8 @@
+register/ValidRegTest.class
+login/AccountLoginTest.class
+login/LoginTest.class
+MoveThroughSection/MoveMainPageTest.class
+MoveThroughSection/MoveConstructorTest.class
+register/InvalidPasswordTest.class
+login/LogoutTest.class
+base/BaseTest.class

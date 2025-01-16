@@ -1,0 +1,11 @@
+browser/Browser.class
+browser/BrowserType.class
+pageObject/ProfilePage.class
+constants/Constants.class
+pageObject/MainPage.class
+pageObject/LoginPage.class
+Info/UserClient.class
+pageObject/ForgotPasswordPage.class
+pageObject/RegisterPage.class
+browser/Browser$1.class
+Info/User.class
